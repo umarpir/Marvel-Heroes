@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Quote: Codable{
+struct Quote: Hashable, Codable{
     var quote : String
     var author: String
 }
@@ -17,7 +17,7 @@ struct ContentView: View {
     @State private var quotes = [Quote]()
     var body: some View {
         NavigationView{
-            List(quotes, id: \.quote) { quote in
+            List(quotes, id: \.self) { quote in
                 VStack(alignment: .leading){
                     Text(quote.author)
                         .foregroundColor(Color.blue)
@@ -44,7 +44,7 @@ struct ContentView: View {
         }
         //fetch data from url
         do{
-            let (data,_) = try await URLSession.shared.data(from: url)
+            let (data, response) = try await URLSession.shared.data(from: url)
             
             if let decodedResponse = try? JSONDecoder().decode([Quote].self, from: data){
                 quotes = decodedResponse
