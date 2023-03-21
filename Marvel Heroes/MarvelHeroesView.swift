@@ -7,60 +7,71 @@
 
 import SwiftUI
 
-struct Quote:Hashable, Codable{
-//    var id : Int
+
+//struct response : Codable{
+//    var data: Data
+//}
+//
+//struct results: Codable{
+//    var results: Data
+//}
+//
+//struct Data: Codable{
+//    var id: Int
 //    var name: String
-//    var description: String
-//    var results: String
+//}
+
+struct Quotes : Codable{
     var quote: String
     var author: String
 }
 
 
+
 struct ContentView: View {
-    @State private var quotes = [Quote]()
+    var heroes = MarvelHeroesViewModel()
+    @State private var dataSet = [Quotes]()
     var publicKey = ""
     var privateKey = ""
     var body: some View {
         NavigationView{
-            List(quotes, id: \.self) { quote in
+            List(dataSet, id: \.quote) { datas in
                 VStack(alignment: .leading){
-                    Text(quote.quote)
+                    Text("\(datas.quote)")
                         .foregroundColor(Color.blue)
                         .font(.headline)
-                    Text(quote.author)
-                    
+                    Text("\(datas.author)")
                 }
-                
             }
-            .navigationTitle("helloooo")
+            .navigationTitle("Heroes")
             .task{
                 await fetchData()
             }
         }
-        
-        
     }
     
     func fetchData () async{
         //create url
-        guard let url = URL(string: //"https://gateway.marvel.com:443/v1/public/characters?ts=7&apikey=ba970a0b0d3f4db979adcb441a8f9b52&hash=38abe4e296ba8828ebfd47a5c9e62c6b"
-            "https://api.breakingbadquotes.xyz/v1/quotes/20"
+        guard let url = URL(string:
+        "https://api.breakingbadquotes.xyz/v1/quotes/20"
+        //"https://gateway.marvel.com:443/v1/public/characters?ts=7&apikey=ba970a0b0d3f4db979adcb441a8f9b52&hash=38abe4e296ba8828ebfd47a5c9e62c6b"
         ) else {
             print("invalid url")
             return
         }
         //fetch data from url
         do{
+            var request = URLRequest(url: url)
+            request.setValue("Jmr3aGHREy3aSCgI7OFu9w==AoP1CMlQ3WyZN1mL", forHTTPHeaderField: "X-Api-Key")
+            
             let (data, _) = try await URLSession.shared.data(from: url)
             
-            if let decodedResponse = try? JSONDecoder().decode([Quote].self, from: data){
-                quotes = decodedResponse
+            if let decodedResponse = try? JSONDecoder().decode([Quotes].self, from: data){
+                dataSet = decodedResponse
             }
         } catch{
             print("invalid data")
         }
-        // decode data
     }
 }
 
