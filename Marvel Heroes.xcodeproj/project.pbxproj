@@ -13,7 +13,7 @@
 		67D3211B29C79D2700B65DB1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67D3211A29C79D2700B65DB1 /* Preview Assets.xcassets */; };
 		67D3212829C9D6E400B65DB1 /* HeroesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D3212729C9D6E400B65DB1 /* HeroesModel.swift */; };
 		67D3212A29C9D72000B65DB1 /* MarvelHeroesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D3212929C9D72000B65DB1 /* MarvelHeroesViewModel.swift */; };
-		67D3212C29C9E1E700B65DB1 /* HeroesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D3212B29C9E1E700B65DB1 /* HeroesView.swift */; };
+		67D3213729CB1ABB00B65DB1 /* HeroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D3213629CB1ABB00B65DB1 /* HeroView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +24,8 @@
 		67D3211A29C79D2700B65DB1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		67D3212729C9D6E400B65DB1 /* HeroesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesModel.swift; sourceTree = "<group>"; };
 		67D3212929C9D72000B65DB1 /* MarvelHeroesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelHeroesViewModel.swift; sourceTree = "<group>"; };
-		67D3212B29C9E1E700B65DB1 /* HeroesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesView.swift; sourceTree = "<group>"; };
+		67D3212D29CB104C00B65DB1 /* Marvel-Heroes-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Marvel-Heroes-Info.plist"; sourceTree = SOURCE_ROOT; };
+		67D3213629CB1ABB00B65DB1 /* HeroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +58,10 @@
 		67D3211229C79D2500B65DB1 /* Marvel Heroes */ = {
 			isa = PBXGroup;
 			children = (
+				67D3212D29CB104C00B65DB1 /* Marvel-Heroes-Info.plist */,
 				67D3211329C79D2500B65DB1 /* Marvel_HeroesApp.swift */,
 				67D3212729C9D6E400B65DB1 /* HeroesModel.swift */,
-				67D3212B29C9E1E700B65DB1 /* HeroesView.swift */,
+				67D3213629CB1ABB00B65DB1 /* HeroView.swift */,
 				67D3211529C79D2500B65DB1 /* MarvelHeroesView.swift */,
 				67D3212929C9D72000B65DB1 /* MarvelHeroesViewModel.swift */,
 				67D3211729C79D2700B65DB1 /* Assets.xcassets */,
@@ -147,7 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67D3211629C79D2500B65DB1 /* MarvelHeroesView.swift in Sources */,
-				67D3212C29C9E1E700B65DB1 /* HeroesView.swift in Sources */,
+				67D3213729CB1ABB00B65DB1 /* HeroView.swift in Sources */,
 				67D3212829C9D6E400B65DB1 /* HeroesModel.swift in Sources */,
 				67D3211429C79D2500B65DB1 /* Marvel_HeroesApp.swift in Sources */,
 				67D3212A29C9D72000B65DB1 /* MarvelHeroesViewModel.swift in Sources */,
@@ -282,7 +284,7 @@
 				DEVELOPMENT_TEAM = 92ALLDU5CD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "Marvel-Heroes-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -311,7 +313,7 @@
 				DEVELOPMENT_TEAM = 92ALLDU5CD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "Marvel-Heroes-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

@@ -29,50 +29,57 @@ struct Quotes : Codable{
 
 
 struct ContentView: View {
-    var heroes = MarvelHeroesViewModel()
-    @State private var dataSet = [Quotes]()
-    var publicKey = ""
-    var privateKey = ""
+    @StateObject private var mvn = MarvelHeroesViewModel()
     var body: some View {
-        NavigationView{
-            List(dataSet, id: \.quote) { datas in
-                VStack(alignment: .leading){
-                    Text("\(datas.quote)")
-                        .foregroundColor(Color.blue)
-                        .font(.headline)
-                    Text("\(datas.author)")
+        NavigationStack{
+                VStack {
+                    List {
+                        ForEach(mvn.response, id: \.id) { ress in
+                                VStack{
+                                    HeroView(hero: ress)
+                                }
+                            }
+                        .navigationTitle("Heroeeees")
+                    }
                 }
-            }
-            .navigationTitle("Heroes")
-            .task{
-                await fetchData()
-            }
+            
         }
+        
+//        NavigationView{
+//            List{
+//                ForEach(mvn.response) { hero in
+//                    let _ = print(hero)
+//                    HeroesView(hero: hero)
+//                        .listRowSeparator(.hidden)
+//                }
+//
+//            }
+//        }
     }
     
-    func fetchData () async{
-        //create url
-        guard let url = URL(string:
-        "https://api.breakingbadquotes.xyz/v1/quotes/20"
-        //"https://gateway.marvel.com:443/v1/public/characters?ts=7&apikey=ba970a0b0d3f4db979adcb441a8f9b52&hash=38abe4e296ba8828ebfd47a5c9e62c6b"
-        ) else {
-            print("invalid url")
-            return
-        }
-        //fetch data from url
-        do{
-            var request = URLRequest(url: url)
-            request.setValue("Jmr3aGHREy3aSCgI7OFu9w==AoP1CMlQ3WyZN1mL", forHTTPHeaderField: "X-Api-Key")
-            
-            let (data, _) = try await URLSession.shared.data(from: url)
-            
-            if let decodedResponse = try? JSONDecoder().decode([Quotes].self, from: data){
-                dataSet = decodedResponse
-            }
-        } catch{
-            print("invalid data")
-        }
-    }
+//    func fetchData () async{
+//        //create url
+//        guard let url = URL(string:
+//        //"https://api.breakingbadquotes.xyz/v1/quotes/20"
+//        "https://gateway.marvel.com:443/v1/public/characters?ts=7&apikey=ba970a0b0d3f4db979adcb441a8f9b52&hash=38abe4e296ba8828ebfd47a5c9e62c6b"
+//        ) else {
+//            print("invalid url")
+//            return
+//        }
+//        //fetch data from url
+//        do{
+//            var request = URLRequest(url: url)
+//            request.setValue("Jmr3aGHREy3aSCgI7OFu9w==AoP1CMlQ3WyZN1mL", forHTTPHeaderField: "X-Api-Key")
+//
+//            let (data, _) = try await URLSession.shared.data(from: url)
+//
+//            if let decodedResponse = try? JSONDecoder().decode([Quotes].self, from: data){
+//                dataSet = decodedResponse
+//            }
+//        } catch{
+//            print("invalid data")
+//        }
+//    }
 }
 
 struct ContentView_Previews: PreviewProvider {
