@@ -10,6 +10,7 @@ import Foundation
 
 class MarvelHeroesViewModel: ObservableObject{
     @Published var response : [MarvelResult] = []
+    @Published var isPresented = false
     private let urlString =  "https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=0c863702b0b77a585e4071cbc3593dea&hash=86d684bb2fb91e73c81cb7fc6b69d967"
     
     init() {
@@ -36,6 +37,14 @@ class MarvelHeroesViewModel: ObservableObject{
                   }
                }
            }.resume()
+        }
+    }
+    
+    func returnDescription(hero : MarvelResult) -> String{
+        if((hero.description!.count < 2)){
+            return "Description not available"
+        } else{
+            return "Description \(hero.description ?? "N/A")"
         }
     }
 }
