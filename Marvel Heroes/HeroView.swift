@@ -13,10 +13,13 @@ struct HeroView: View {
     
     var body: some View {
             VStack(alignment: .leading) {
-                Text("Hero ID : \(hero.id)" )
-                Divider()
                 Text("Hero : \(hero.name ?? "N/A")")
-                Text("Description \(hero.description ?? "N/A")")
+                Divider()
+                if((hero.description!.count < 2)){
+                    Text("Description not available")
+                } else{
+                    Text("Description \(hero.description ?? "N/A")")
+                }
         }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding()

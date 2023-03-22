@@ -9,9 +9,41 @@ import SwiftUI
 
 struct HeroInformationView: View {
     let hero : MarvelResult
+    @State var currentComic: ComicsItem = ComicsItem(resourceURI: "", name: "Comic")
+    var comics : [ComicsItem] = []
     var body: some View {
-        Text("\(hero.name ?? "sajbdk")")
-        Text("\(hero.thumbnail?.path ?? "sajbdk")")
+        NavigationView {
+            VStack{
+                Spacer(minLength: 100)
+                List{
+                    Text("Name: \(hero.name!)")
+                    Text("Description: \(hero.description ?? "No desc")")
+                    Picker("Comics", selection: $currentComic){
+                        ForEach(hero.comics?.items ?? comics, id: \.self){ comic in
+                            Text(comic.name!)
+                        }
+                    }
+                }
+            }
+            .navigationBarTitleDisplayMode(.inline)
+                    .toolbar {
+                        ToolbarItem(placement: .principal) {
+                            VStack {
+                                Text("   ").font(.largeTitle)
+                                HStack {
+                                    Image("heroes")
+                                        .resizable()
+                                        .frame(width: 100,height: 100)
+                                        .clipShape(Circle())
+                                        .scaledToFill()
+
+                                    Text(hero.name!).font(.largeTitle)
+                                }
+                            }
+                        }
+                        
+                    }
+        }
     }
 }
 

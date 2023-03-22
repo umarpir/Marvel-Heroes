@@ -30,31 +30,26 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             ZStack {
-                LinearGradient(gradient: Gradient(colors:[ .red, .black]), startPoint: .top, endPoint: .bottom) .ignoresSafeArea()
                 VStack {
+                    HStack{
+                        
+                        Image("Bally_logo.svg")
+                            .resizable()
+                            .frame(width: 170, height: 80)
+                        Text("X Marvel")
+                            .foregroundColor(.red)
+                            .font(.largeTitle.weight(.bold))
+                            .fontDesign(.default)
+                        
+                    }
                         List {
                             ForEach(mvn.response, id: \.id) { ress in
                                 NavigationLink( destination: HeroInformationView(hero: ress)){
                                     HeroView(hero: ress)
                                 }
                             }
-                            .toolbar{
-                                ToolbarItem(placement: .principal){
-                                    HStack{
-                                        
-                                        Image("Bally_logo.svg")
-                                            .resizable()
-                                            .frame(width: 170, height: 80)
-                                        Text("X Marvel")
-                                            .foregroundColor(.red)
-                                            .font(.largeTitle.weight(.bold))
-                                            .fontDesign(.default)
-                                        
-                                    }
-                                }
-                            }
-                        }
-                }
+                        } 
+                }  .background(.black)
             }
             }
             
