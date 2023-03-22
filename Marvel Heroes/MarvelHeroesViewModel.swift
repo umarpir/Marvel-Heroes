@@ -10,7 +10,7 @@ import Foundation
 
 class MarvelHeroesViewModel: ObservableObject{
     @Published var response : [MarvelResult] = []
-    private let urlString =  "https://gateway.marvel.com:443/v1/public/characters?ts=7&apikey=ba970a0b0d3f4db979adcb441a8f9b52&hash=38abe4e296ba8828ebfd47a5c9e62c6b"
+    private let urlString =  "https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=0c863702b0b77a585e4071cbc3593dea&hash=86d684bb2fb91e73c81cb7fc6b69d967"
     
     init() {
         Task {

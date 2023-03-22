@@ -14,6 +14,7 @@
 		67D3212829C9D6E400B65DB1 /* HeroesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D3212729C9D6E400B65DB1 /* HeroesModel.swift */; };
 		67D3212A29C9D72000B65DB1 /* MarvelHeroesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D3212929C9D72000B65DB1 /* MarvelHeroesViewModel.swift */; };
 		67D3213729CB1ABB00B65DB1 /* HeroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D3213629CB1ABB00B65DB1 /* HeroView.swift */; };
+		67D3213B29CB483000B65DB1 /* HeroInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D3213A29CB483000B65DB1 /* HeroInformationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		67D3212929C9D72000B65DB1 /* MarvelHeroesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelHeroesViewModel.swift; sourceTree = "<group>"; };
 		67D3212D29CB104C00B65DB1 /* Marvel-Heroes-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Marvel-Heroes-Info.plist"; sourceTree = SOURCE_ROOT; };
 		67D3213629CB1ABB00B65DB1 /* HeroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroView.swift; sourceTree = "<group>"; };
+		67D3213A29CB483000B65DB1 /* HeroInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroInformationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				67D3212729C9D6E400B65DB1 /* HeroesModel.swift */,
 				67D3213629CB1ABB00B65DB1 /* HeroView.swift */,
 				67D3211529C79D2500B65DB1 /* MarvelHeroesView.swift */,
+				67D3213A29CB483000B65DB1 /* HeroInformationView.swift */,
 				67D3212929C9D72000B65DB1 /* MarvelHeroesViewModel.swift */,
 				67D3211729C79D2700B65DB1 /* Assets.xcassets */,
 				67D3211929C79D2700B65DB1 /* Preview Content */,
@@ -149,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67D3211629C79D2500B65DB1 /* MarvelHeroesView.swift in Sources */,
+				67D3213B29CB483000B65DB1 /* HeroInformationView.swift in Sources */,
 				67D3213729CB1ABB00B65DB1 /* HeroView.swift in Sources */,
 				67D3212829C9D6E400B65DB1 /* HeroesModel.swift in Sources */,
 				67D3211429C79D2500B65DB1 /* Marvel_HeroesApp.swift in Sources */,
