@@ -13,18 +13,26 @@ struct HeroInformationView: View {
     @State private var currentComic: ComicsItem = ComicsItem(resourceURI: "", name: "Comic")
     var comics : [ComicsItem] = []
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack{
                 Spacer(minLength: 100)
                 List{
                     Text("Name: \(hero.name!)")
                     Text(heroInfoVm.returnDescription(hero: hero))
-                    Picker("Comics", selection: $currentComic){
-                        ForEach(hero.comics?.items ?? comics, id: \.self){ comic in
-                            Text(comic.name!)
-                        }.pickerStyle(.navigationLink)
-                    }.id(UUID())
+                    
+                    
+//                    Picker("Comics", selection: $currentComic){
+//                        ForEach(hero.comics?.items ?? comics, id: \.self){ comic in
+//                            Text(comic.name!)
+//                        }.pickerStyle(.navigationLink)
+//                    }.id(UUID())
+                    Text("Comics").font(.largeTitle)
+                    ForEach((hero.comics?.items!)!, id: \.self) { comic in
+                            ComicsView(comic: comic)
+                        
+                    }
                 }
+
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -57,7 +65,8 @@ struct HeroInformationView: View {
 }
 
 struct HeroInformationView_Previews: PreviewProvider {
+    static var itemo : [ComicsItem] = [ComicsItem(resourceURI: "sdf", name: "asdasf")]
     static var previews: some View {
-        HeroInformationView(hero: .init(id: 123, name: "Spider-Man", description: "hello hello", modified: "Date.now", thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/3/40/4bb4680432f73", thumbnailExtension: .jpg), resourceURI: "sdf", comics: nil, series: nil, stories: nil, events: Comics(available: 12, collectionURI: "sdfd", items: nil, returned: 1), urls: nil))
+        HeroInformationView(hero: .init(id: 123, name: "Spider-Man", description: "hello hello", modified: "Date.now", thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/3/40/4bb4680432f73", thumbnailExtension: .jpg), resourceURI: "sdf", comics: Comics(available: 12, collectionURI: "asjdhvasjkh.com", items: itemo, returned: 12), series: nil, stories: nil, events: Comics(available: 12, collectionURI: "sdfd", items: nil, returned: 1), urls: nil))
     }
 }

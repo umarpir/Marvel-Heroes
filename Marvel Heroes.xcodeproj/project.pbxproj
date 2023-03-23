@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6761043029CC606000B5874E /* extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6761042F29CC606000B5874E /* extentions.swift */; };
+		6761043229CCAB2100B5874E /* ComicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6761043129CCAB2100B5874E /* ComicsView.swift */; };
 		67D3211429C79D2500B65DB1 /* Marvel_HeroesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D3211329C79D2500B65DB1 /* Marvel_HeroesApp.swift */; };
 		67D3211629C79D2500B65DB1 /* MarvelHeroesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D3211529C79D2500B65DB1 /* MarvelHeroesView.swift */; };
 		67D3211829C79D2700B65DB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67D3211729C79D2700B65DB1 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		6761042F29CC606000B5874E /* extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extentions.swift; sourceTree = "<group>"; };
+		6761043129CCAB2100B5874E /* ComicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsView.swift; sourceTree = "<group>"; };
 		67D3211029C79D2500B65DB1 /* Marvel Heroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Marvel Heroes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		67D3211329C79D2500B65DB1 /* Marvel_HeroesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marvel_HeroesApp.swift; sourceTree = "<group>"; };
 		67D3211529C79D2500B65DB1 /* MarvelHeroesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelHeroesView.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				67D3212D29CB104C00B65DB1 /* Marvel-Heroes-Info.plist */,
 				67D3211329C79D2500B65DB1 /* Marvel_HeroesApp.swift */,
 				67D3213629CB1ABB00B65DB1 /* HeroView.swift */,
+				6761043129CCAB2100B5874E /* ComicsView.swift */,
 				67D3213A29CB483000B65DB1 /* HeroInformationView.swift */,
 				67DDF65029CB7358007683B6 /* HeroInformationViewModel.swift */,
 				67D3212729C9D6E400B65DB1 /* HeroesModel.swift */,
@@ -160,6 +163,7 @@
 				67D3211629C79D2500B65DB1 /* MarvelHeroesView.swift in Sources */,
 				67D3213B29CB483000B65DB1 /* HeroInformationView.swift in Sources */,
 				67D3213729CB1ABB00B65DB1 /* HeroView.swift in Sources */,
+				6761043229CCAB2100B5874E /* ComicsView.swift in Sources */,
 				67D3212829C9D6E400B65DB1 /* HeroesModel.swift in Sources */,
 				6761043029CC606000B5874E /* extentions.swift in Sources */,
 				67DDF65129CB7358007683B6 /* HeroInformationViewModel.swift in Sources */,

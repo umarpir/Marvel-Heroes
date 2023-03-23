@@ -11,9 +11,9 @@ import CryptoKit
 class MarvelHeroesViewModel: ObservableObject{
     @Published var response : [MarvelResult] = []
     @Published var isPresented = false
-    private var publicKey: String = "0c863702b0b77a585e4071cbc3593dea"
-    private var privateKey: String = "ff73168904c789744eca56e7c8dbca159776416c"
-    private let urlString =  "https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=0c863702b0b77a585e4071cbc3593dea&hash=86d684bb2fb91e73c81cb7fc6b69d967"
+    private var publicKey: String = "ba970a0b0d3f4db979adcb441a8f9b52"
+    private var privateKey: String = "a3323a54c286349da868621e746a5d8c23bd81a3"
+    private var urlString =  "https://gateway.marvel.com:443/v1/public/characters?limit=50&ts=1679582861&apikey=ba970a0b0d3f4db979adcb441a8f9b52&hash=d9e7cb4ea17cb3e0fb44f09fb5aa0320"
     
     init() {
         Task {
@@ -22,7 +22,7 @@ class MarvelHeroesViewModel: ObservableObject{
     }
     
     func fetchHeroes () {
-        if let url = URL(string: urlString) {
+        if let url = URL(string: urlString){
            URLSession.shared.dataTask(with: url) { data, response, error in
               if let data = data {
                   do {
@@ -52,8 +52,9 @@ class MarvelHeroesViewModel: ObservableObject{
     
     func urlRequest() -> String{
         let timeStamp = timeStamp()
-        let apiUrl = "https://gateway.marvel.com:443/v1/public/characters?&ts=\(timeStamp)1&apikey=\(publicKey)&hash=\(md5Generator(pubKey:publicKey, timeStamp: timeStamp, privKey: privateKey))"
-        return apiUrl
+        let apiUrl = "https://gateway.marvel.com:443/v1/public/characters?ts=\(timeStamp)1&apikey=\(publicKey)&hash=\(md5Generator(pubKey:publicKey, timeStamp: timeStamp, privKey: privateKey))"
+
+        return apiUrl.trimmingCharacters(in: .whitespaces)
     }
     
     func timeStamp() -> Int{

@@ -11,8 +11,8 @@ class HeroInformationViewModel: ObservableObject{
     
     func comicPathBuilder(imageThumbnail: Thumbnail) -> URL{
         
-        var imageSize = "/detail."
-        var imageExtention = "\(imageThumbnail.thumbnailExtension!)"
+        let imageSize = "/detail."
+        let imageExtention = "\(imageThumbnail.thumbnailExtension!)"
         comicPath = ("\(imageThumbnail.path!)\(imageSize)\(imageExtention)")
         comicPath = comicPath.replacingOccurrences(of: "http", with: "https")
         let url = URL(string: comicPath)

@@ -30,7 +30,7 @@ struct ContentView: View {
                     }
                     List {
                         ForEach(mvn.response, id: \.id) { ress in
-                            NavigationLink( destination: HeroInformationView(hero: ress)){
+                            NavigationLink(destination: HeroInformationView(hero: ress)){
                                 HeroView(hero: ress)
                             }
                         }
