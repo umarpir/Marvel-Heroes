@@ -98,3 +98,7 @@ enum URLType: String, Codable, Hashable {
     case detail = "detail"
     case wiki = "wiki"
 }
+enum RequestType: String, Codable, Hashable {
+    case getCharacters = "gif"
+    case jpg = "jpg"
+}
