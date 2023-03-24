@@ -9,8 +9,7 @@ import Foundation
 import CryptoKit
 
 class MarvelHeroesViewModel: ObservableObject{
-    @Published var response : [MarvelResult] = []
-    @Published var isPresented = false
+    @Published var results : [MarvelResult] = []
     private var publicKey: String = "ba970a0b0d3f4db979adcb441a8f9b52"
     private var privateKey: String = "a3323a54c286349da868621e746a5d8c23bd81a3"
     private var urlString =  "https://gateway.marvel.com:443/v1/public/characters?limit=50&ts=1679582861&apikey=ba970a0b0d3f4db979adcb441a8f9b52&hash=d9e7cb4ea17cb3e0fb44f09fb5aa0320"
@@ -26,11 +25,11 @@ class MarvelHeroesViewModel: ObservableObject{
            URLSession.shared.dataTask(with: url) { data, response, error in
               if let data = data {
                   do {
-                     let res = try JSONDecoder().decode(Welcome.self, from: data)
-                      if let marvelResult = res.data?.results {
-                          print(marvelResult)
+                     let response = try JSONDecoder().decode(Welcome.self, from: data)
+                      if let marvelResult = response.data?.results {
+                          //print(marvelResult)
                           DispatchQueue.main.async {
-                              self.response = marvelResult
+                              self.results = marvelResult
                           }
                           
                       }

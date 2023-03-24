@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-struct Quotes : Codable{
-    var quote: String
-    var author: String
-}
 struct ContentView: View {
     @StateObject private var mvn = MarvelHeroesViewModel()
     var body: some View {
@@ -29,7 +25,7 @@ struct ContentView: View {
                         
                     }
                     List {
-                        ForEach(mvn.response, id: \.id) { ress in
+                        ForEach(mvn.results, id: \.id) { ress in
                             NavigationLink(destination: HeroInformationView(hero: ress)){
                                 HeroView(hero: ress)
                             }

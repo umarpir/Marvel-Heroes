@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		6761043029CC606000B5874E /* extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6761042F29CC606000B5874E /* extentions.swift */; };
 		6761043229CCAB2100B5874E /* ComicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6761043129CCAB2100B5874E /* ComicsView.swift */; };
+		6761043429CDD08E00B5874E /* ComicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6761043329CDD08E00B5874E /* ComicsViewController.swift */; };
+		6761043629CDD18400B5874E /* ComicInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6761043529CDD18400B5874E /* ComicInformationView.swift */; };
+		6761043829CDE34A00B5874E /* ComicsInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6761043729CDE34A00B5874E /* ComicsInformationViewController.swift */; };
+		6761043A29CDE3D100B5874E /* ComicsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6761043929CDE3D100B5874E /* ComicsModel.swift */; };
 		67D3211429C79D2500B65DB1 /* Marvel_HeroesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D3211329C79D2500B65DB1 /* Marvel_HeroesApp.swift */; };
 		67D3211629C79D2500B65DB1 /* MarvelHeroesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D3211529C79D2500B65DB1 /* MarvelHeroesView.swift */; };
 		67D3211829C79D2700B65DB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67D3211729C79D2700B65DB1 /* Assets.xcassets */; };
@@ -23,6 +27,10 @@
 /* Begin PBXFileReference section */
 		6761042F29CC606000B5874E /* extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extentions.swift; sourceTree = "<group>"; };
 		6761043129CCAB2100B5874E /* ComicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsView.swift; sourceTree = "<group>"; };
+		6761043329CDD08E00B5874E /* ComicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsViewController.swift; sourceTree = "<group>"; };
+		6761043529CDD18400B5874E /* ComicInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicInformationView.swift; sourceTree = "<group>"; };
+		6761043729CDE34A00B5874E /* ComicsInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsInformationViewController.swift; sourceTree = "<group>"; };
+		6761043929CDE3D100B5874E /* ComicsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsModel.swift; sourceTree = "<group>"; };
 		67D3211029C79D2500B65DB1 /* Marvel Heroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Marvel Heroes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		67D3211329C79D2500B65DB1 /* Marvel_HeroesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marvel_HeroesApp.swift; sourceTree = "<group>"; };
 		67D3211529C79D2500B65DB1 /* MarvelHeroesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelHeroesView.swift; sourceTree = "<group>"; };
@@ -68,14 +76,18 @@
 			children = (
 				67D3212D29CB104C00B65DB1 /* Marvel-Heroes-Info.plist */,
 				67D3211329C79D2500B65DB1 /* Marvel_HeroesApp.swift */,
-				67D3213629CB1ABB00B65DB1 /* HeroView.swift */,
-				6761043129CCAB2100B5874E /* ComicsView.swift */,
-				67D3213A29CB483000B65DB1 /* HeroInformationView.swift */,
-				67DDF65029CB7358007683B6 /* HeroInformationViewModel.swift */,
 				67D3212729C9D6E400B65DB1 /* HeroesModel.swift */,
-				6761042F29CC606000B5874E /* extentions.swift */,
+				67D3213629CB1ABB00B65DB1 /* HeroView.swift */,
 				67D3211529C79D2500B65DB1 /* MarvelHeroesView.swift */,
 				67D3212929C9D72000B65DB1 /* MarvelHeroesViewModel.swift */,
+				67D3213A29CB483000B65DB1 /* HeroInformationView.swift */,
+				67DDF65029CB7358007683B6 /* HeroInformationViewModel.swift */,
+				6761043129CCAB2100B5874E /* ComicsView.swift */,
+				6761043329CDD08E00B5874E /* ComicsViewController.swift */,
+				6761043929CDE3D100B5874E /* ComicsModel.swift */,
+				6761043529CDD18400B5874E /* ComicInformationView.swift */,
+				6761043729CDE34A00B5874E /* ComicsInformationViewController.swift */,
+				6761042F29CC606000B5874E /* extentions.swift */,
 				67D3211729C79D2700B65DB1 /* Assets.xcassets */,
 				67D3211929C79D2700B65DB1 /* Preview Content */,
 			);
@@ -162,9 +174,13 @@
 			files = (
 				67D3211629C79D2500B65DB1 /* MarvelHeroesView.swift in Sources */,
 				67D3213B29CB483000B65DB1 /* HeroInformationView.swift in Sources */,
+				6761043429CDD08E00B5874E /* ComicsViewController.swift in Sources */,
+				6761043A29CDE3D100B5874E /* ComicsModel.swift in Sources */,
+				6761043629CDD18400B5874E /* ComicInformationView.swift in Sources */,
 				67D3213729CB1ABB00B65DB1 /* HeroView.swift in Sources */,
 				6761043229CCAB2100B5874E /* ComicsView.swift in Sources */,
 				67D3212829C9D6E400B65DB1 /* HeroesModel.swift in Sources */,
+				6761043829CDE34A00B5874E /* ComicsInformationViewController.swift in Sources */,
 				6761043029CC606000B5874E /* extentions.swift in Sources */,
 				67DDF65129CB7358007683B6 /* HeroInformationViewModel.swift in Sources */,
 				67D3211429C79D2500B65DB1 /* Marvel_HeroesApp.swift in Sources */,

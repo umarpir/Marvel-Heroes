@@ -15,17 +15,11 @@ struct HeroInformationView: View {
     var body: some View {
         NavigationStack {
             VStack{
-                Spacer(minLength: 100)
+                Spacer(minLength: 180)
                 List{
                     Text("Name: \(hero.name!)")
                     Text(heroInfoVm.returnDescription(hero: hero))
-                    
-                    
-//                    Picker("Comics", selection: $currentComic){
-//                        ForEach(hero.comics?.items ?? comics, id: \.self){ comic in
-//                            Text(comic.name!)
-//                        }.pickerStyle(.navigationLink)
-//                    }.id(UUID())
+
                     Text("Comics").font(.largeTitle)
                     ForEach((hero.comics?.items!)!, id: \.self) { comic in
                             ComicsView(comic: comic)
@@ -38,8 +32,9 @@ struct HeroInformationView: View {
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     VStack {
-                        Text(" ").font(.largeTitle)
-                        HStack {
+                        Spacer(minLength: 170)
+                        VStack {
+                            Spacer()
                             AsyncImage(
                                 url: heroInfoVm.comicPathBuilder(imageThumbnail: hero.thumbnail!),
                                 content: { image in
@@ -51,10 +46,12 @@ struct HeroInformationView: View {
                                     ProgressView()
                                 }
                             )
-                                .frame(width: 120,height: 120)
+                            .padding(.top)
+                                .frame(width: 150,height: 150)
                                 .clipShape(Circle())
                             Text("  \(hero.name!)")
-                                .font(.title)
+                                .font(.largeTitle)
+                                .multilineTextAlignment(.center)
                         }
                     }
                 }
