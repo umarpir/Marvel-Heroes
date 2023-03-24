@@ -34,21 +34,21 @@ struct HeroInformationView: View {
                     VStack {
                         Spacer(minLength: 170)
                         VStack {
-                            Spacer()
                             AsyncImage(
                                 url: heroInfoVm.comicPathBuilder(imageThumbnail: hero.thumbnail!),
                                 content: { image in
-                                    image.resizable()
+                                    image
+                                        .resizable()
                                         .aspectRatio(contentMode: .fill)
                                         .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                        .frame(width: 150,height: 150)
+                                        .clipShape(Circle())
                                 },
                                 placeholder: {
                                     ProgressView()
                                 }
                             )
-                            .padding(.top)
-                                .frame(width: 150,height: 150)
-                                .clipShape(Circle())
+                                
                             Text("  \(hero.name!)")
                                 .font(.largeTitle)
                                 .multilineTextAlignment(.center)

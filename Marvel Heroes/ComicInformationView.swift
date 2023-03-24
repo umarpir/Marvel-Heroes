@@ -18,21 +18,27 @@ struct ComicInformationView: View {
                     ForEach(comicsInformationVC.comicResults, id: \.id) { ress in
                         VStack{
                             Text(ress.title!).font(.largeTitle).multilineTextAlignment(.center)
-                            AsyncImage(
-                                url: comicsInformationVC.imagePathBuilder(imageThumbnail: ress.thumbnail!),
-                                content: { image in
-                                    image.resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                                },
-                                placeholder: {
-                                    ProgressView()
-                                }
-                            )
-                            .frame(width: 200,height: 400)
-                            
+                            HStack{
+                                Spacer()
+                                AsyncImage(
+                                    url: comicsInformationVC.imagePathBuilder(imageThumbnail: ress.thumbnail!),
+                                    content: { image in
+                                        image.resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                    },
+                                    placeholder: {
+                                        ProgressView()
+                                    }
+                                )
+                                .padding(.horizontal)
+                                .frame(width: 200,height: 400)
+                                Spacer()
+                            }
+                            Spacer(minLength: 20)
                             Text(ress.description ?? "Description Not Found")
                         }
+                            
                     }
                 }
                 
