@@ -8,8 +8,8 @@
 import Foundation
 class ComicsInformationViewController : ObservableObject{
     @Published var comicResults : [ComicsResult] = []
-    private var publicKey: String = "ba970a0b0d3f4db979adcb441a8f9b52"
-    private var privateKey: String = "a3323a54c286349da868621e746a5d8c23bd81a3"
+    private var publicKey: String = "0c863702b0b77a585e4071cbc3593dea"
+    private var privateKey: String = "ff73168904c789744eca56e7c8dbca159776416c"
     private var urlString =  "https://gateway.marvel.com/v1/public/comics/22506?ts=1679582861&apikey=ba970a0b0d3f4db979adcb441a8f9b52&hash=d9e7cb4ea17cb3e0fb44f09fb5aa0320"
     var comicPath : String = ""
 

@@ -14,15 +14,13 @@ struct ContentView: View {
             ZStack {
                 VStack {
                     HStack{
-                        
                         Image("Bally_logo.svg")
                             .resizable()
                             .frame(width: 170, height: 80)
-                        Text("X Marvel")
+                        Text("X   Marvel")
                             .foregroundColor(Color(red: 1, green: 0, blue: 0))
                             .font(.largeTitle.weight(.bold))
                             .fontDesign(.default)
-                        
                     }
                     List {
                         ForEach(mvn.results, id: \.id) { ress in
@@ -36,7 +34,7 @@ struct ContentView: View {
         }
         
     }
-
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

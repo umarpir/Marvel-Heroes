@@ -17,7 +17,7 @@ struct ComicInformationView: View {
                 List {
                     ForEach(comicsInformationVC.comicResults, id: \.id) { ress in
                         VStack{
-                            Text(ress.title!).font(.largeTitle).multilineTextAlignment(.center)
+                            Text(ress.title!).font(.largeTitle).multilineTextAlignment(.center).padding(.top)
                             HStack{
                                 Spacer()
                                 AsyncImage(
@@ -26,27 +26,30 @@ struct ComicInformationView: View {
                                         image.resizable()
                                             .aspectRatio(contentMode: .fill)
                                             .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                            .padding(.horizontal)
+                                            .frame(width: 200,height: 400)
+                                        
                                     },
                                     placeholder: {
                                         ProgressView()
                                     }
                                 )
-                                .padding(.horizontal)
-                                .frame(width: 200,height: 400)
                                 Spacer()
                             }
-                            Spacer(minLength: 20)
-                            Text(ress.description ?? "Description Not Found")
+                            Text(ress.description ?? "Description Unavailable")
+                                .multilineTextAlignment(.center)
+                                .padding(.vertical)
                         }
-                            
+                        
                     }
                 }
                 
                 
                 Spacer()
-                Button("dismiss") {
+                Button("Dismiss") {
                     dismiss()
                 }
+                .padding(.bottom)
                 .font(.title2)
             }
         }
@@ -58,6 +61,6 @@ struct ComicInformationView: View {
 
 struct ComicInformationView_Previews: PreviewProvider {
     static var previews: some View {
-        ComicInformationView(resourceUri: "http://gateway.marvel.com/v1/public/comics/21366")
+        ComicInformationView(resourceUri: "http://gateway.marvel.com/v1/public/comics/22506")
     }
 }

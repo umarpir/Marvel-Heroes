@@ -8,7 +8,7 @@
 import Foundation
 class HeroInformationViewModel: ObservableObject{
     var comicPath : String = ""
-    
+
     func comicPathBuilder(imageThumbnail: Thumbnail) -> URL{
         
         let imageSize = "/detail."
