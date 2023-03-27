@@ -8,7 +8,7 @@
 import Foundation
 import CryptoKit
 
-class MarvelHeroesViewModel: ObservableObject{
+ class MarvelHeroesViewModel: ObservableObject{
     @Published var results : [MarvelResult] = []
     private var publicKey: String = "0c863702b0b77a585e4071cbc3593dea"
     private var privateKey: String = "ff73168904c789744eca56e7c8dbca159776416c"
@@ -20,7 +20,7 @@ class MarvelHeroesViewModel: ObservableObject{
     }
     
     func fetchHeroes () {
-        var urlRequest = URLRequest(url: urlRequest()!)
+        var urlRequest = URLRequest(url: urlRequest(time: timeStamp())!)
         urlRequest.cachePolicy = .returnCacheDataElseLoad
             URLSession.shared.dataTask(with: urlRequest) { data, response, error in
                 if let data = data {
@@ -45,14 +45,13 @@ class MarvelHeroesViewModel: ObservableObject{
         if((hero.description!.count < 2)){
             return "Description not available"
         } else{
-            return "Description \(hero.description ?? "N/A")"
+            return "Description: \(hero.description ?? "N/A")"
         }
     }
     
-    func urlRequest() -> URL?{
-        let timeStamp = timeStamp()
-        var api = "https://gateway.marvel.com:443/v1/public/characters?limit=50&ts=\(timeStamp)&apikey=\(publicKey)&hash="
-        api.append(md5Generator(pubKey:publicKey, timeStamp: timeStamp, privKey: privateKey))
+     func urlRequest(time: Int) -> URL?{
+        var api = "https://gateway.marvel.com:443/v1/public/characters?limit=50&ts=\(time)&apikey=\(publicKey)&hash="
+        api.append(md5Generator(pubKey:publicKey, timeStamp: time, privKey: privateKey))
         let apiUrl = URL(string: api)
         return apiUrl
     }
