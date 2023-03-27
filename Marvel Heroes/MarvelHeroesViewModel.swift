@@ -20,8 +20,9 @@ class MarvelHeroesViewModel: ObservableObject{
     }
     
     func fetchHeroes () {
-        if let url = urlRequest(){
-            URLSession.shared.dataTask(with: url) { data, response, error in
+        var urlRequest = URLRequest(url: urlRequest()!)
+        urlRequest.cachePolicy = .returnCacheDataElseLoad
+            URLSession.shared.dataTask(with: urlRequest) { data, response, error in
                 if let data = data {
                     do {
                         let response = try JSONDecoder().decode(Welcome.self, from: data)
@@ -37,7 +38,7 @@ class MarvelHeroesViewModel: ObservableObject{
                     }
                 }
             }.resume()
-        }
+        
     }
     
     func returnDescription(hero : MarvelResult) -> String{

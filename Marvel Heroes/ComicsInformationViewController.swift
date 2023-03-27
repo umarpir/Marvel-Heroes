@@ -15,8 +15,9 @@ class ComicsInformationViewController : ObservableObject{
 
     
     func fetchComic (urlStr : URL?) {
-        if let url = urlStr{
-           URLSession.shared.dataTask(with: url) { data, response, error in
+        var urlRequest = URLRequest(url: urlStr!)
+        urlRequest.cachePolicy = .returnCacheDataElseLoad
+            URLSession.shared.dataTask(with: urlRequest) { data, response, error in
               if let data = data {
                   do {
                      let response = try JSONDecoder().decode(ComicsData.self, from: data)
@@ -32,7 +33,7 @@ class ComicsInformationViewController : ObservableObject{
                   }
                }
            }.resume()
-        }
+        
     }
     
     func urlRequest() -> String{
